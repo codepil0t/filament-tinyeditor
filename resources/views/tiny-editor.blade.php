@@ -9,12 +9,9 @@
             x-init="(() => {
             $nextTick(() => {
                 tinymce.createEditor('tiny-editor-{{ $getId() }}', {
+                    license_key: 'gpl',
                     target: $refs.tinymce,
                     deprecation_warnings: true,
-                    language: '{{ $getInterfaceLanguage() }}',
-                    language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/{{ $getInterfaceLanguage() }}.min.js',
-                    toolbar_sticky: {{ $getToolbarSticky() ? 'true' : 'false' }},
-                    toolbar_sticky_offset: 64,
                     skin: {
                         light: 'oxide',
                         dark: 'oxide-dark',
@@ -25,9 +22,7 @@
                         dark: 'dark',
                         system: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
                     }[typeof theme === 'undefined' ? 'light' : theme],
-                    max_height: {{ $getMaxHeight() }},
-                    min_height: {{ $getMinHeight() }},
-                    menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
+                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                     @if($getPlugins()) plugins: [
                         @foreach($getPlugins() as $plugin)
                             '{{ $plugin }}',
@@ -78,7 +73,6 @@
                         input.click();
                     },
                     automatic_uploads: true,
-                    templates: {{ $getTemplate() }},
                     setup: function(editor) {
                         if(!window.tinySettingsCopy) {
                             window.tinySettingsCopy = [];
@@ -136,7 +130,7 @@
                             }
                         });
                     },
-                    {{ $getCustomConfigs() }}
+                     {{ $getCustomConfigs() }}
                 }).render();
             });
 
