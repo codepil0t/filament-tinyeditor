@@ -27,7 +27,7 @@ TinyEditor::make('content')->simple()
 You can add many editors with differnt toolbars for each of them. First, publish the configuration files:
 
 ```bash
-php artisan vendor:publish --tag="filamentTinyEditor-config"
+php artisan vendor:publish --tag="filament-forms-tinyeditor-config"
 ```
 
 Each profile looks like the following: (You can add as many you want):
@@ -79,7 +79,7 @@ to
 There is no restriction of configs, you can add everything in here it will be converted and added to tinymce.init() function
 
 ```php
-// config/filamentTinyEditor.php
+// config/filament-forms-tinyeditor.php
 
 'simple' => [
     'plugins' => 'directionality emoticons link wordcount',

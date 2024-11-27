@@ -9,7 +9,6 @@
         x-init="(() => {
             $nextTick(() => {
                 tinymce.createEditor('tiny-editor-{{ $getId() }}', {
-                    inline: {{ $getInlineMode }}
                     target: $refs.tinymce,
                     deprecation_warnings: false,
                     language: '{{ $getInterfaceLanguage() }}',

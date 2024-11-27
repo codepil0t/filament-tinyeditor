@@ -12,7 +12,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
     use Concerns\HasFileAttachments;
     use Concerns\HasPlaceholder;
 
-    protected string $view = 'filamentTinyEditor::tiny-editor';
+    protected string $view = 'filament-forms-tinyeditor::tiny-editor';
 
     protected bool $isSimple = false;
 
@@ -45,9 +45,6 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     // TinyMCE var: remove_script_host
     protected bool $removeScriptHost = true;
-
-    // TinyMCE var: inline
-    protected bool $inlineMode = false;
 
     // TinyMCE var: convert_urls
     protected bool $convertUrls = true;
@@ -95,7 +92,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     public function getFileAttachmentsDirectory(): ?string
     {
-        return filled($directory = $this->evaluate($this->fileAttachmentsDirectory)) ? $directory : config('filamentTinyEditor.profiles.'.$this->profile.'.upload_directory');
+        return filled($directory = $this->evaluate($this->fileAttachmentsDirectory)) ? $directory : config('filament-forms-tinyeditor.profiles.'.$this->profile.'.upload_directory');
     }
 
     public function getInterfaceLanguage(): string
@@ -228,8 +225,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return 'autoresize directionality emoticons link wordcount';
         }
 
-        if (config('filamentTinyEditor.profiles.'.$this->profile.'.plugins')) {
-            return config('filamentTinyEditor.profiles.'.$this->profile.'.plugins');
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
         }
 
         return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
@@ -258,8 +255,8 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return 'removeformat | bold italic | rtl ltr | link emoticons';
         }
 
-        if (config('filamentTinyEditor.profiles.'.$this->profile.'.toolbar')) {
-            return config('filamentTinyEditor.profiles.'.$this->profile.'.toolbar');
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar')) {
+            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.toolbar');
         }
 
         return 'undo redo removeformat | formatselect fontsizeselect | bold italic | rtl ltr | alignjustify alignright aligncenter alignleft | numlist bullist | forecolor backcolor | blockquote table toc hr | image link media codesample emoticons | wordcount fullscreen';
@@ -362,18 +359,6 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         return $this;
     }
 
-    public function getInlineMode(): bool
-    {
-        return $this->inlineMode;
-    }
-
-    public function setInlineMode(bool $inlineMode): static
-    {
-        $this->inlineMode = $inlineMode;
-
-        return $this;
-    }
-
     public function getConvertUrls(): bool
     {
         return $this->convertUrls;
@@ -399,13 +384,13 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
             return json_encode([]);
         }
 
-        return json_encode(config('filamentTinyEditor.templates.'.$this->template, []));
+        return json_encode(config('filament-forms-tinyeditor.templates.'.$this->template, []));
     }
 
     public function getCustomConfigs(): string
     {
-        if (config('filamentTinyEditor.profiles.'.$this->profile.'.custom_configs')) {
-            return '...'.json_encode(config('filamentTinyEditor.profiles.'.$this->profile.'.custom_configs'));
+        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs')) {
+            return '...'.json_encode(config('filament-forms-tinyeditor.profiles.'.$this->profile.'.custom_configs'));
         }
 
         return '';
