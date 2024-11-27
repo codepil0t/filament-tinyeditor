@@ -29,7 +29,7 @@
                     min_height: {{ $getMinHeight() }},
                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
                     plugins: ['{{ $getPlugins() }}'],
-                    external_plugins: @js($getExternalPlugins()),
+                    @if($getExternalPlugins()) external_plugins: @js($getExternalPlugins()), @endif
                     toolbar: '{{ $getToolbar() }}',
                     toolbar_mode: 'sliding',
                     document_base_url: '{{ $getDocumentBaseUrl() }}',
