@@ -1,16 +1,16 @@
 <x-dynamic-component
-    :component="$getFieldWrapperView()"
-    :field="$field"
-    class="relative z-0"
+        :component="$getFieldWrapperView()"
+        :field="$field"
+        class="relative z-0"
 >
     <div
-        x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
-        x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc($getLanguageId(), 'codepil0t/filament-tinyeditor'))]"
-        x-init="(() => {
+            x-data="{ state: $wire.entangle('{{ $getStatePath() }}'), initialized: false }"
+            x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc($getLanguageId(), 'codepil0t/filament-tinyeditor'))]"
+            x-init="(() => {
             $nextTick(() => {
                 tinymce.createEditor('tiny-editor-{{ $getId() }}', {
                     target: $refs.tinymce,
-                    deprecation_warnings: false,
+                    deprecation_warnings: true,
                     language: '{{ $getInterfaceLanguage() }}',
                     language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/{{ $getInterfaceLanguage() }}.min.js',
                     toolbar_sticky: {{ $getToolbarSticky() ? 'true' : 'false' }},
@@ -28,7 +28,12 @@
                     max_height: {{ $getMaxHeight() }},
                     min_height: {{ $getMinHeight() }},
                     menubar: {{ $getShowMenuBar() ? 'true' : 'false' }},
-                    plugins: ['{{ $getPlugins() }}'],
+                    @if($getPlugins()) plugins: [
+                        @foreach($getPlugins() as $plugin)
+                            '{{ $plugin }}',
+                        @endforeach
+                        ],
+                    @endif
                     @if($getExternalPlugins()) external_plugins: @js($getExternalPlugins()), @endif
                     toolbar: '{{ $getToolbar() }}',
                     toolbar_mode: 'sliding',
@@ -149,25 +154,25 @@
                 });
             }
         })()"
-        x-cloak
-        class="overflow-hidden"
-        wire:ignore
+            x-cloak
+            class="overflow-hidden"
+            wire:ignore
     >
         @unless($isDisabled())
             <input
-                id="tiny-editor-{{ $getId() }}"
-                type="hidden"
-                x-ref="tinymce"
-                placeholder="{{ $getPlaceholder() }}"
+                    id="tiny-editor-{{ $getId() }}"
+                    type="hidden"
+                    x-ref="tinymce"
+                    placeholder="{{ $getPlaceholder() }}"
             >
         @else
             <div
-                x-html="state"
-                @style([
-                    'max-height: '.$getPreviewMaxHeight().'px' => $getPreviewMaxHeight() > 0,
-                    'min-height: '.$getPreviewMinHeight().'px' => $getPreviewMinHeight() > 0,
-                ])
-                class="block w-full max-w-none rounded-lg border border-gray-300 bg-white p-3 opacity-70 shadow-sm transition duration-75 prose dark:prose-invert dark:border-gray-600 dark:bg-gray-700 dark:text-white overflow-y-auto"
+                    x-html="state"
+                    @style([
+                        'max-height: '.$getPreviewMaxHeight().'px' => $getPreviewMaxHeight() > 0,
+                        'min-height: '.$getPreviewMinHeight().'px' => $getPreviewMinHeight() > 0,
+                    ])
+                    class="block w-full max-w-none rounded-lg border border-gray-300 bg-white p-3 opacity-70 shadow-sm transition duration-75 prose dark:prose-invert dark:border-gray-600 dark:bg-gray-700 dark:text-white overflow-y-auto"
             ></div>
         @endunless
     </div>

@@ -219,17 +219,17 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
         };
     }
 
-    public function getPlugins(): string
+    public function getPlugins(): array
     {
-        if ($this->isSimple()) {
-            return 'autoresize directionality emoticons link wordcount';
-        }
+        // if ($this->isSimple()) {
+        //     return 'autoresize directionality emoticons link wordcount';
+        // }
 
-        if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
-            return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
-        }
+        // if (config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins')) {
+        //     return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins');
+        // }
 
-        return 'advlist codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount';
+        return config('filament-forms-tinyeditor.profiles.'.$this->profile.'.plugins') ?? [];
     }
 
     public function getExternalPlugins(): array
