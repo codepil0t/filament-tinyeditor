@@ -9,7 +9,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-forms-tinyeditor';
+    public static string $name = 'filamentTinyEditor';
 
     public function configurePackage(Package $package): void
     {
@@ -95,6 +95,6 @@ class FilamentFormsTinyeditorServiceProvider extends PackageServiceProvider
             Js::make('tinymce-lang-vi', 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/vi.min.js')->loadedOnRequest(),
             Js::make('tinymce-lang-zh_CN', 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/zh_CN.min.js')->loadedOnRequest(),
             Js::make('tinymce-lang-zh_TW', 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/zh_TW.min.js')->loadedOnRequest(),
-        ], package: 'codepil0t/filament-forms-tinyeditor');
+        ], package: 'codepil0t/filamentTinyEditor');
     }
 }

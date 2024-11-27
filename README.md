@@ -1,13 +1,13 @@
 # Filament Forms TinyEditor
 
-<img src="https://banners.beyondco.de/Filament%20Form%20TinyEditor%203.jpeg?theme=dark&packageManager=composer+require&packageName=codepil0t%2ffilament-forms-tinyeditor&pattern=tinyCheckers&style=style_1&description=by+codepil0t&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="codepil0t"/>
+<img src="https://banners.beyondco.de/Filament%20Form%20TinyEditor%203.jpeg?theme=dark&packageManager=composer+require&packageName=codepil0t%2ffilamentTinyEditor&pattern=tinyCheckers&style=style_1&description=by+codepil0t&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" alt="codepil0t"/>
 
 
 Filament Forms TinyEditor is a package for [Laravel Filament](https://github.com/laravel-filament/filament) that wraps [TinyMce Editor](https://www.tiny.cloud) into a usable component. It's works with [Filament Forms](https://filamentadmin.com/docs/2.x/forms/installation) standalone too.
 
 |             Light mode             |               Dark mode                |
 |:----------------------------------:|:--------------------------------------:|
-| ![Light example](https://raw.githubusercontent.com/codepil0t/filament-forms-tinyeditor/2.x/art/editor.png) | ![Dark example](https://raw.githubusercontent.com/codepil0t/filament-forms-tinyeditor/2.x/art/editor-dark.png) |
+| ![Light example](https://raw.githubusercontent.com/codepil0t/filamentTinyEditor/2.x/art/editor.png) | ![Dark example](https://raw.githubusercontent.com/codepil0t/filamentTinyEditor/2.x/art/editor-dark.png) |
 
 ## Compatibility
 
