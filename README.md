@@ -7,7 +7,7 @@ Filament Forms TinyEditor is a package for [Laravel Filament](https://github.com
 
 |             Light mode             |               Dark mode                |
 |:----------------------------------:|:--------------------------------------:|
-| ![Light example](https://raw.githubusercontent.com/codepil0t/filamentTinyEditor/2.x/art/editor.png) | ![Dark example](https://raw.githubusercontent.com/codepil0t/filamentTinyEditor/2.x/art/editor-dark.png) |
+| ![Light example](https://raw.githubusercontent.com/codepil0t/filament-tinyeditor/2.x/art/editor.png) | ![Dark example](https://raw.githubusercontent.com/codepil0t/filament-tinyeditor/2.x/art/editor-dark.png) |
 
 ## Compatibility
 

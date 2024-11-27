@@ -7,7 +7,7 @@ title: Installation
 You can install the package via composer:
 
 ```bash
-composer require codepil0t/filamentTinyEditor
+composer require codepil0t/filament-tinyeditor
 ```
 
 After installing the package, you don't have to do anything if you have **Filament** installed. If not, and you want to use it with **Forms standalone**, run the following command:

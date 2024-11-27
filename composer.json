@@ -1,5 +1,5 @@
 {
-    "name": "codepil0t/filamentTinyEditor",
+    "name": "codepil0t/filament-tinyeditor",
     "description": "A TinyMce editor component for Filament",
     "keywords": [
         "laravel",
@@ -8,7 +8,7 @@
         "tinyeditor",
         "tinymce"
     ],
-    "homepage": "https://github.com/codepil0t/filamentTinyEditor",
+    "homepage": "https://github.com/codepil0t/filament-tinyeditor",
     "license": "MIT",
     "authors": [
         {
