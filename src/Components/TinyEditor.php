@@ -20,7 +20,7 @@ class TinyEditor extends Field implements Contracts\CanBeLengthConstrained, Cont
 
     protected int $maxHeight = 0;
 
-    protected int $minHeight = 0;
+    protected int $minHeight = 500;
 
     protected int $previewMaxHeight = 0;
 

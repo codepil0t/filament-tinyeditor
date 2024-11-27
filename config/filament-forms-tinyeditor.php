@@ -13,8 +13,12 @@ return [
     'profiles' => [
 
         'default' => [
-            'plugins' => ["link", "media"],
-            'toolbar' => "link image",
+            'plugins' => [
+                "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+                "help", "image", "insertdatetime", "link", "lists", "media",
+                "preview", "searchreplace", "table", "visualblocks", "accordion"
+            ],
+            'toolbar' => "undo redo | link image accordion | styles | bold italic underline strikethrough | align | bullist numlist",
             'upload_directory' => null,
         ],
 

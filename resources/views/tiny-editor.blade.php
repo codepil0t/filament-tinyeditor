@@ -12,6 +12,9 @@
                     license_key: 'gpl',
                     target: $refs.tinymce,
                     deprecation_warnings: true,
+                    language: '{{ $getInterfaceLanguage() }}',
+                    language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n@23.7.24/langs5/{{ $getInterfaceLanguage() }}.min.js',
+                    min_height: {{ $getMinHeight() }},
                     skin: {
                         light: 'oxide',
                         dark: 'oxide-dark',
